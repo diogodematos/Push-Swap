@@ -36,6 +36,12 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct s_stack
+{
+	int				size;
+	int				*stack;
+}					t_stack;
+
 int		ft_isalpha(int a);
 int		ft_isdigit(int a);
 int		ft_isalnum(int a);

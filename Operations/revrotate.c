@@ -1,45 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   revrotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcarrilh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 11:36:36 by dcarrilh          #+#    #+#             */
-/*   Updated: 2023/02/14 11:56:23 by dcarrilh         ###   ########.fr       */
+/*   Created: 2023/02/16 17:00:25 by dcarrilh          #+#    #+#             */
+/*   Updated: 2023/02/16 17:00:30 by dcarrilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Libft/libft.h"
-
-void	sa(t_stack stack)
+void	rra(t_stack *stack)
 {
-	int	t;
 	int	a;
+	int	tmp;
 	
-	if (stack.size < 2)
-		return ;
-	a = 0;
-	t = stack.stack[a];
-	stack.stack[a] = stack.stack[a+1];
-	stack.stack[a+1] = t;
+	a = stack->size - 1;
+	tmp = stack->stack[a];
+	while (a > 0)
+	{
+		stack->stack[a] = stack->stack[a - 1];
+		a--;
+	}
+	stack->stack[a] = tmp;
 }
 
-void	sb(t_stack stack)
+void	rrb(t_stack *stack)
 {
-	int	t;
 	int	a;
+	int	tmp;
 	
-	if (stack.size < 2)
-		return ;
-	a = 0;
-	t = stack.stack[a];
-	stack.stack[a] = stack.stack[a+1];
-	stack.stack[a+1] = t;
+	a = stack->size - 1;
+	tmp = stack->stack[a];
+	while (a > 0)
+	{
+		stack->stack[a] = stack->stack[a - 1];
+		a--;
+	}
+	stack->stack[a] = tmp;
 }
 
-void	ss(t_stack stacka, t_stack stackb)
+void	rrr(t_stack *stacka, t_stack *stackb)
 {
-	sa(stacka);
-	sb(stackb);
+	rra(stacka);
+	rrb(stackb);
 }
