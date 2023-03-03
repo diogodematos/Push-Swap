@@ -39,6 +39,7 @@ typedef struct s_list
 typedef struct s_stack
 {
 	int				size;
+	int				top;  // [0, top]
 	int				*stack;
 }					t_stack;
 
@@ -93,5 +94,16 @@ int		ft_printnmb(int n);
 int		ft_printunmb(unsigned int n);
 int		ft_printhex(unsigned long n, char c);
 int		ft_printpnt(void *str);
+void	sa(t_stack stack);
+void	sb(t_stack stack);
+void	ss(t_stack stacka, t_stack stackb);
+void	pa(t_stack *stacka, t_stack *stackb);
+void	pb(t_stack *stacka, t_stack *stackb);
+void	ra(t_stack *stack);
+void	rb(t_stack *stack);
+void	rr(t_stack *stacka, t_stack *stackb);
+void	rra(t_stack *stack);
+void	rrb(t_stack *stack);
+void	rrr(t_stack *stacka, t_stack *stackb);
 
 #endif
