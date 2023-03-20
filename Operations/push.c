@@ -37,22 +37,26 @@
 	free(tmp.stack);
 }*/
 
-void	pa(t_stack *stacka, t_stack *stackb)
+void	pa(t_stack *stack_a, t_stack *stack_b)
 {
 	int	a;
 	
-	a = stacka->size;
-	stacka->size = stacka->size + 1;
+	a = stack_a->size;
+	
 	while (a > 0)
 	{
-		stacka->stack[a] = stacka->stack[a-1];
+		stack_a->stack[a] = stack_a->stack[a-1];
 		a--;	
 	}
-	stacka->stack[a] = stackb->stack[a];
-	a = -1;
-	stackb->size = stackb->size - 1;
-	while (a++ <= stackb->size)
-		stackb->stack[a] = stackb->stack[a+1];
+	stack_a->stack[a] = stack_b->stack[a];
+	stack_a->size += 1;
+	a = 0;
+	stack_b->size -= 1;
+	while (a <= stack_b->size)
+	{
+		stack_b->stack[a] = stack_b->stack[a+1];
+		a++;
+	}
 }
 
 /*void	pb(t_stack stacka, t_stack stackb)
@@ -85,20 +89,24 @@ void	pa(t_stack *stacka, t_stack *stackb)
 	free(tmp.stack);
 }*/
 
-void	pb(t_stack *stacka, t_stack *stackb)
+void	pb(t_stack *stack_a, t_stack *stack_b)
 {
 	int	a;
 	
-	a = stackb->size;
-	stackb->size = stackb->size + 1;
+	a = stack_b->size;
+	
 	while (a > 0)
 	{
-		stackb->stack[a] = stackb->stack[a - 1];
+		stack_b->stack[a] = stack_b->stack[a-1];
 		a--;	
 	}
-	stackb->stack[a] = stacka->stack[a];
-	a = -1;
-	stacka->size = stacka->size - 1;
-	while ( a++ <= stacka->size)
-		stacka->stack[a] = stacka->stack[a + 1];
+	stack_b->stack[a] = stack_a->stack[a];
+	stack_b->size += 1;
+	a = 0;
+	stack_a->size -= 1;
+	while (a < stack_a->size)
+	{
+		stack_a->stack[a] = stack_a->stack[a+1];
+		a++;
+	}
 }

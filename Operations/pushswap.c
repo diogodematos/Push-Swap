@@ -60,8 +60,8 @@ int	main(int argc, char **argv)
 
 	num = 0;
 	a = 0;
-	stack_a.stack = malloc(sizeof(int) * (argc - 1));
-	stack_b.stack = calloc(sizeof(int), (argc - 1));
+	stack_a.stack = calloc((argc-1), sizeof(int));
+	stack_b.stack = calloc((argc-1), sizeof(int));
 	stack_a.size = argc - 1;
 	stack_b.size = 0;
 	while (a < stack_a.size)
@@ -70,29 +70,16 @@ int	main(int argc, char **argv)
 		stack_a.stack[a] = num;
 		a++;
 	}
-	a = 0;
-	//ss(stack_a, stack_b);
 	print_stacks(stack_a, stack_b);
-	pb(&stack_a, &stack_b); //stack_a.size = stack_a.size - 1; stack_b.size = stack_b.size + 1;
-	print_stacks(stack_a, stack_b);
-	pb(&stack_a, &stack_b); //stack_a.size = stack_a.size - 1; stack_b.size = stack_b.size + 1;
-	print_stacks(stack_a, stack_b);
-	pb(&stack_a, &stack_b); //stack_a.size = stack_a.size - 1; stack_b.size = stack_b.size + 1;
-	print_stacks(stack_a, stack_b);
-	pb(&stack_a, &stack_b); //stack_a.size = stack_a.size - 1; stack_b.size = stack_b.size + 1;
-	print_stacks(stack_a, stack_b);
-	pa(&stack_a, &stack_b); //stack_a.size = stack_a.size - 1; stack_b.size = stack_b.size + 1;
-	print_stacks(stack_a, stack_b);
-	/*pa(&stack_a, &stack_b); //stack_a.size = stack_a.size - 1; stack_b.size = stack_b.size + 1;
-	print_stacks(stack_a, stack_b);
-	pa(&stack_a, &stack_b); //stack_a.size = stack_a.size - 1; stack_b.size = stack_b.size + 1;
-	print_stacks(stack_a, stack_b);
-	pa(&stack_a, &stack_b); //stack_a.size = stack_a.size - 1; stack_b.size = stack_b.size + 1;
-	print_stacks(stack_a, stack_b);*/
-	rrr(&stack_a, &stack_b); //stack_a.size = stack_a.size - 1; stack_b.size = stack_b.size + 1;
+	pb(&stack_a, &stack_b);
+	pb(&stack_a, &stack_b);
+	pa(&stack_a, &stack_b);
+	pa(&stack_a, &stack_b);
+	pb(&stack_a, &stack_b);
+	/*pa(&stack_a, &stack_b);
+	rrr(&stack_a, &stack_b);*/
 	printf("jsh\n");
 	print_stacks(stack_a, stack_b);
-	//pb(stack_a, stack_b); stack_a.size = stack_a.size - 1; stack_b.size = stack_b.size + 1;*/
 	/*while (stack_a.stack[a])
 	{
 		printf("sta2 %d\n", stack_a.stack[a]);
@@ -106,5 +93,7 @@ int	main(int argc, char **argv)
 	}
 	//print_stacks(stack_a, stack_b);
 	//printf("stb %d\n", stack_a.size);*/
+	free(stack_a.stack);
+	free(stack_b.stack);
 	return (0);
 }
