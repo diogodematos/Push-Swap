@@ -52,7 +52,7 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
 	stack_a->size += 1;
 	a = 0;
 	stack_b->size -= 1;
-	while (a <= stack_b->size)
+	while (a < stack_b->size)
 	{
 		stack_b->stack[a] = stack_b->stack[a+1];
 		a++;

@@ -25,6 +25,7 @@ void	rra(t_stack *stack)
 		a--;
 	}
 	stack->stack[a] = tmp;
+	ft_printf("rra\n");
 }
 
 void	rrb(t_stack *stack)
@@ -40,6 +41,7 @@ void	rrb(t_stack *stack)
 		a--;
 	}
 	stack->stack[a] = tmp;
+	ft_printf("rrb\n");
 }
 
 void	rrr(t_stack *stacka, t_stack *stackb)

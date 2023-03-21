@@ -105,5 +105,6 @@ void	rr(t_stack *stacka, t_stack *stackb);
 void	rra(t_stack *stack);
 void	rrb(t_stack *stack);
 void	rrr(t_stack *stacka, t_stack *stackb);
+void    ft_free(t_stack *stack_a, t_stack *stack_b);
 
 #endif

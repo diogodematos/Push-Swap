@@ -23,6 +23,7 @@ void	sa(t_stack stack)
 	t = stack.stack[a];
 	stack.stack[a] = stack.stack[a+1];
 	stack.stack[a+1] = t;
+	ft_printf("sa\n");
 }
 
 void	sb(t_stack stack)
@@ -36,6 +37,7 @@ void	sb(t_stack stack)
 	t = stack.stack[a];
 	stack.stack[a] = stack.stack[a+1];
 	stack.stack[a+1] = t;
+	ft_printf("sb\n");
 }
 
 void	ss(t_stack stacka, t_stack stackb)
