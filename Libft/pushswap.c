@@ -53,48 +53,19 @@ void    print_stacks(t_stack stack_a, t_stack stack_b)
 
 int	main(int argc, char **argv)
 {
-	if (argc < 2)
+	t_stack	stack_a;
+	t_stack	stack_b;
+
+    if (argc < 2)
 		return (0);
 	if (argc == 2)
     {
-        char	**num;
-		int	a;
-		t_stack	stack_a;
-		t_stack	stack_b;
-
-		num = ft_split(argv[1], ' ');
-		a = 0;
-		stack_a.stack = calloc((ft_strlen(argv[1])), sizeof(int));
-		stack_b.stack = calloc((ft_strlen(argv[1])), sizeof(int));
-		stack_b.size = 0;
-        while (num[a])
-        {
-            stack_a.stack[a] = ft_atoi(num[a]);
-            free(num[a]);
-            a++;
-        }
-        stack_a.size = a;
-        if (stack_a.size == 1)
-        {
-            free(num);
-		    ft_free(&stack_a, &stack_b);
-            return (0);
-        }
-        print_stacks(stack_a, stack_b);
-		pb(&stack_a, &stack_b);
-		pb(&stack_a, &stack_b);
-		printf("jsh\n");
-		print_stacks(stack_a, stack_b);
-        free(num);
-		ft_free(&stack_a, &stack_b);
-		return (0);
+        ft_pssplit(&stack_a, &stack_b, argv);
     }  
 	else
 	{	
 		int	num;
 		int	a;
-		t_stack	stack_a;
-		t_stack	stack_b;
 
 		num = 0;
 		a = 0;
@@ -108,12 +79,18 @@ int	main(int argc, char **argv)
 			stack_a.stack[a] = num;
 			a++;
 		}
-		print_stacks(stack_a, stack_b);
-		pb(&stack_a, &stack_b);
-		pb(&stack_a, &stack_b);
-		printf("jsh\n");
-		print_stacks(stack_a, stack_b);
-		ft_free(&stack_a, &stack_b);
 	}
+    if (stack_a.size == 1)
+    {
+		ft_free(&stack_a, &stack_b);
+        return (0);
+    }
+    print_stacks(stack_a, stack_b);
+	pb(&stack_a, &stack_b);
+	pb(&stack_a, &stack_b);
+    pa(&stack_a, &stack_b);
+	printf("jsh\n");
+	print_stacks(stack_a, stack_b);
+	ft_free(&stack_a, &stack_b);
     return (0);
 }
