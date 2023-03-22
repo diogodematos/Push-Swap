@@ -58,6 +58,10 @@ int	main(int argc, char **argv)
 
     if (argc < 2)
 		return (0);
+    if (ft_check_error(argc, argv) == 1)
+    {
+        return (0);
+    }
 	if (argc == 2)
         ft_pssplit(&stack_a, &stack_b, argv);
 	else

@@ -108,5 +108,6 @@ void	rrr(t_stack *stacka, t_stack *stackb);
 void    ft_free(t_stack *stack_a, t_stack *stack_b);
 void    ft_pssplit(t_stack *stack_a, t_stack *stack_b, char **argv);
 void	ft_fillstack(t_stack *stack_a, t_stack *stack_b, int argc, char **argv);
+int		ft_check_error(int argc, char **argv);
 
 #endif
