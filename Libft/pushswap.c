@@ -59,38 +59,24 @@ int	main(int argc, char **argv)
     if (argc < 2)
 		return (0);
 	if (argc == 2)
-    {
         ft_pssplit(&stack_a, &stack_b, argv);
-    }  
 	else
-	{	
-		int	num;
-		int	a;
-
-		num = 0;
-		a = 0;
-		stack_a.stack = calloc((argc-1), sizeof(int));
-		stack_b.stack = calloc((argc-1), sizeof(int));
-		stack_a.size = argc - 1;
-		stack_b.size = 0;
-		while (a < stack_a.size)
-		{
-			num = atoi(argv[a+1]);
-			stack_a.stack[a] = num;
-			a++;
-		}
-	}
+        ft_fillstack(&stack_a, &stack_b, argc, argv);
     if (stack_a.size == 1)
     {
 		ft_free(&stack_a, &stack_b);
         return (0);
     }
-    print_stacks(stack_a, stack_b);
-	pb(&stack_a, &stack_b);
-	pb(&stack_a, &stack_b);
-    pa(&stack_a, &stack_b);
-	printf("jsh\n");
-	print_stacks(stack_a, stack_b);
+    /*if (stack_a.size == 2)
+        ft_sort3(&stack_a, &stack_b);*/
 	ft_free(&stack_a, &stack_b);
     return (0);
 }
+
+
+/*print_stacks(stack_a, stack_b);
+pb(&stack_a, &stack_b);
+pb(&stack_a, &stack_b);
+pa(&stack_a, &stack_b);
+printf("jsh\n");
+print_stacks(stack_a, stack_b);*/

@@ -12,6 +12,22 @@
 
 #include "libft.h"
 
+static int	count_size(char const *str, char c)
+{
+	int	a;
+	int	i;
+
+	a = 0;
+	i = 0;
+	while (str[a])
+	{
+		if (str[a] != c)
+			i++;
+		a++;
+	}
+	return (i);
+}
+
 void    ft_pssplit(t_stack *stack_a, t_stack *stack_b, char **argv)
 {
     char	**num;
@@ -19,8 +35,8 @@ void    ft_pssplit(t_stack *stack_a, t_stack *stack_b, char **argv)
 	
     num = ft_split(argv[1], ' ');
 	a = 0;
-	stack_a->stack = calloc((ft_strlen(argv[1])), sizeof(int));
-	stack_b->stack = calloc((ft_strlen(argv[1])), sizeof(int));
+	stack_a->stack = calloc(count_size(argv[1], ' '), sizeof(int));
+	stack_b->stack = calloc(count_size(argv[1], ' '), sizeof(int));
 	stack_b->size = 0;
     while (num[a])
     {
