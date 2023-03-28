@@ -33,40 +33,6 @@ int	ft_check_digit(char **argv)
 	return (check);
 }
 
-/*int	ft_check_double(char **argv)
-{
-	int	a;
-	int	check;
-	char	**num;
-	int	b;
-
-	check = 0;
-	a = 0;
-	num = ft_split(argv[1], ' ');
-	while (num[a])
-	{
-		b = a + 1;
-		while (num[b])
-		{
-			if (ft_atoi(num[a]) == ft_atoi(num[b]))
-			{
-				ft_printf("Error\n");
-				check += 1;
-				free(num[a]);
-				free(num[b]);
-				free(num);
-				return (check);
-			}
-			free(num[b]);
-			b++;
-		}
-		free(num[a]);
-		a++;
-	}
-	free(num);
-	return (check);
-}*/
-
 int	ft_check_digit2(char **argv)
 {
 	int	a;
@@ -120,12 +86,30 @@ int	ft_check_double2(int argc, char **argv)
 	return (check);
 }
 
+int	ft_check_intmax(char **argv)
+{
+	int	a;
+	int check;
+
+	a = 1;
+	check = 0;
+	while (argv[a])
+	{
+		if (ft_atol(argv[a]) > 2147483647)
+		{
+			ft_printf("Error\n");
+			check += 1;
+			return (check);
+		}
+		a++;
+	}
+	return (check);
+}
+
 int	ft_check_error(int argc, char **argv)
 {
-	//int	a;
 	static int check;
 
-	//a = 0;
 	if (argc < 1)
 		return (check);
 	if (argc == 2)
@@ -135,11 +119,6 @@ int	ft_check_error(int argc, char **argv)
 			check += 1;
 			return (check);
 		}
-		/*if (ft_check_double(argv) == 1)
-		{
-			check += 1;
-			return (check);
-		}*/
 	}
 	else
 	{
@@ -149,6 +128,11 @@ int	ft_check_error(int argc, char **argv)
 			return (check);
 		}
 		else if (ft_check_double2(argc, argv) == 1)
+		{
+			check += 1;
+			return (check);
+		}
+		else if (ft_check_intmax(argv) == 1)
 		{
 			check += 1;
 			return (check);

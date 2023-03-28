@@ -40,7 +40,7 @@ void    ft_pssplit(t_stack *stack_a, t_stack *stack_b, char **argv)
 	stack_b->size = 0;
     while (num[a])
     {
-        stack_a->stack[a] = ft_atoi(num[a]);
+		stack_a->stack[a] = ft_atoi(num[a]);
         free(num[a]);
         a++;
     }

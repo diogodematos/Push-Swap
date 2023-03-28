@@ -25,7 +25,7 @@ void	ft_fillstack(t_stack *stack_a, t_stack *stack_b, int argc, char **argv)
 		stack_b->size = 0;
 		while (a < stack_a->size)
 		{
-			num = atoi(argv[a+1]);
+			num = ft_atoi(argv[a+1]);
 			stack_a->stack[a] = num;
 			a++;
 		}
