@@ -27,13 +27,14 @@ BONUS = $(BNS:%.c=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-		@$(AR) $(NAME) $(OBJ)	
+		@$(AR) $(NAME) $(OBJ)
+		@$(CC) $(CFLAGS) pushswap.c libft.a -o pushswap
 		
 clean:
 		@$(RM) $(OBJ)
 		
 fclean: clean
-		@$(RM) $(NAME) 
+		@$(RM) $(NAME) pushswap
 		
 re: fclean all
 

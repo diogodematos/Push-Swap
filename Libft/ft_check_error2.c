@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int ft_check_error2(t_stack *stack_a)
+int ft_check_double(t_stack *stack_a)
 {
     int a;
     int b;
@@ -36,4 +36,47 @@ int ft_check_error2(t_stack *stack_a)
         a++;
     }
     return (check);
+}
+
+int	ft_check_intmax2(char **argv)
+{
+	int	a;
+	int check;
+  char	**num;    
+
+	num = ft_split(argv[1], ' ');
+	a = 0;
+	check = 0;
+	while (num[a])
+	{
+		if (ft_atol(num[a]) > 2147483647)
+		{
+			ft_printf("Error\n");
+			check += 1;
+			free(num[a]);
+			free(num);
+			return (check);
+		}
+		free(num[a]);
+		a++;
+	}
+	free(num);
+	return (check);
+}
+
+int ft_check_error2(t_stack *stack_a, char **argv)
+{
+	static int check;
+
+	if (ft_check_double(stack_a) == 1)
+	{
+		check += 1;
+		return (check);
+	}
+	else if (ft_check_intmax2(argv) == 1)
+	{
+		check += 1;
+		return (check);
+	}
+	return (check);
 }

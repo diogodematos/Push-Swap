@@ -65,7 +65,7 @@ int	main(int argc, char **argv)
     if (argc == 2)
     {
         ft_pssplit(&stack_a, &stack_b, argv);
-        if (ft_check_error2(&stack_a) == 1)
+        if (ft_check_error2(&stack_a, argv) == 1)
         {
             ft_free(&stack_a, &stack_b);
             return (0);
