@@ -33,6 +33,40 @@ int	ft_check_digit(char **argv)
 	return (check);
 }
 
+/*int	ft_check_double(char **argv)
+{
+	int	a;
+	int	check;
+	char	**num;
+	int	b;
+
+	check = 0;
+	a = 0;
+	num = ft_split(argv[1], ' ');
+	while (num[a])
+	{
+		b = a + 1;
+		while (num[b])
+		{
+			if (ft_atoi(num[a]) == ft_atoi(num[b]))
+			{
+				ft_printf("Error\n");
+				check += 1;
+				free(num[a]);
+				free(num[b]);
+				free(num);
+				return (check);
+			}
+			free(num[b]);
+			b++;
+		}
+		free(num[a]);
+		a++;
+	}
+	free(num);
+	return (check);
+}*/
+
 int	ft_check_digit2(char **argv)
 {
 	int	a;
@@ -41,7 +75,6 @@ int	ft_check_digit2(char **argv)
 
 	check = 0;
 	a = 1;
-	b = 0;
 	while (argv[a])
 	{
 		b = 0;
@@ -61,6 +94,32 @@ int	ft_check_digit2(char **argv)
 	return (check);
 }
 
+int	ft_check_double2(int argc, char **argv)
+{
+	int	a;
+	int check;
+	int	b;
+
+	check = 0;
+	a = argc - 1;
+	while (a > 0)
+	{
+		b = a - 1;
+		while (b > 0)
+		{
+			if (ft_atoi(argv[a]) == ft_atoi(argv[b]))
+			{
+				ft_printf("Error\n");
+				check += 1;
+				return (check);
+			}
+			b--;
+		}
+		a--;
+	}
+	return (check);
+}
+
 int	ft_check_error(int argc, char **argv)
 {
 	//int	a;
@@ -76,10 +135,20 @@ int	ft_check_error(int argc, char **argv)
 			check += 1;
 			return (check);
 		}
+		/*if (ft_check_double(argv) == 1)
+		{
+			check += 1;
+			return (check);
+		}*/
 	}
 	else
 	{
 		if (ft_check_digit2(argv) == 1)
+		{
+			check += 1;
+			return (check);
+		}
+		else if (ft_check_double2(argc, argv) == 1)
 		{
 			check += 1;
 			return (check);
