@@ -78,6 +78,12 @@ int	main(int argc, char **argv)
 		ft_free(&stack_a, &stack_b);
         return (0);
     }
+    if (ft_check_order(&stack_a) == 1)
+	{
+		ft_free(&stack_a, &stack_b);
+        return (0);
+    }
+    ft_sort(&stack_a, &stack_b);
     print_stacks(stack_a, stack_b);
 	pb(&stack_a, &stack_b);
 	pb(&stack_a, &stack_b);

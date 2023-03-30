@@ -111,6 +111,6 @@ void	ft_fillstack(t_stack *stack_a, t_stack *stack_b, int argc, char **argv);
 int		ft_check_error(int argc, char **argv);
 int		ft_check_error2(t_stack *stack_a, char **argv);
 long    ft_atol(const char *str);
-
+int	ft_check_order(t_stack *stack_a);
 
 #endif
