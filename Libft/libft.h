@@ -39,8 +39,9 @@ typedef struct s_list
 typedef struct s_stack
 {
 	int				size;
-	int				top;  // [0, top]
 	int				*stack;
+	int				max;
+	int				min;
 }					t_stack;
 
 int		ft_isalpha(int a);
@@ -94,9 +95,9 @@ int		ft_printnmb(int n);
 int		ft_printunmb(unsigned int n);
 int		ft_printhex(unsigned long n, char c);
 int		ft_printpnt(void *str);
-void	sa(t_stack stack);
-void	sb(t_stack stack);
-void	ss(t_stack stacka, t_stack stackb);
+void	sa(t_stack *stack);
+void	sb(t_stack *stack);
+void	ss(t_stack *stacka, t_stack *stackb);
 void	pa(t_stack *stacka, t_stack *stackb);
 void	pb(t_stack *stacka, t_stack *stackb);
 void	ra(t_stack *stack);
@@ -112,5 +113,6 @@ int		ft_check_error(int argc, char **argv);
 int		ft_check_error2(t_stack *stack_a, char **argv);
 long    ft_atol(const char *str);
 int	ft_check_order(t_stack *stack_a);
+void ft_sort(t_stack *stack_a, t_stack *stack_b);
 
 #endif

@@ -83,11 +83,8 @@ int	main(int argc, char **argv)
 		ft_free(&stack_a, &stack_b);
         return (0);
     }
-    ft_sort(&stack_a, &stack_b);
     print_stacks(stack_a, stack_b);
-	pb(&stack_a, &stack_b);
-	pb(&stack_a, &stack_b);
-	pa(&stack_a, &stack_b);
+    ft_sort(&stack_a, &stack_b);
 	printf("jsh\n");
 	print_stacks(stack_a, stack_b);
     /*if (stack_a.size == 2)
