@@ -25,6 +25,7 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
 	}
 	stack_a->stack[a] = stack_b->stack[a];
 	stack_a->size += 1;
+	stack_a->max += 1;
 	a = 0;
 	stack_b->size -= 1;
 	while (a < stack_b->size)
@@ -50,6 +51,7 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 	stack_b->size += 1;
 	a = 0;
 	stack_a->size -= 1;
+	stack_a->max -= 1;
 	while (a < stack_a->size)
 	{
 		stack_a->stack[a] = stack_a->stack[a+1];

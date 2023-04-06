@@ -59,9 +59,7 @@ int	main(int argc, char **argv)
     if (argc < 2)
 		return (0);
     if (ft_check_error(argc, argv) == 1)
-    {
         return (0);
-    }
     if (argc == 2)
     {
         ft_pssplit(&stack_a, &stack_b, argv);
@@ -86,7 +84,7 @@ int	main(int argc, char **argv)
     //print_stacks(stack_a, stack_b);
     ft_sort(&stack_a, &stack_b);
 	//printf("jsh\n");
-	print_stacks(stack_a, stack_b);
+	//print_stacks(stack_a, stack_b);
     /*if (stack_a.size == 2)
         ft_sort3(&stack_a, &stack_b);*/
 	ft_free(&stack_a, &stack_b);

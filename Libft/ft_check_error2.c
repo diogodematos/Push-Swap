@@ -20,20 +20,20 @@ int ft_check_double(t_stack *stack_a)
 
     a = 0;
     check = 0;
-    while (stack_a->stack[a + 1])
+    while (a < stack_a->size)
     {
-        b = a + 1;
-        while (stack_a->stack[b])
+      b = a + 1;
+    	while (b < stack_a->size)
+      {
+        if (stack_a->stack[a] == stack_a->stack[b])
         {
-            if (stack_a->stack[a] == stack_a->stack[b])
-            {
-				ft_printf("Error\n");
-				check += 1;
-				return (check);
-			}
-			b++;
-        }
-        a++;
+					ft_printf("Error\n");
+					check += 1;
+					return (check);
+				}
+				b++;
+      }
+      a++;
     }
     return (check);
 }
