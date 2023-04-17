@@ -26,12 +26,10 @@ void ft_sort3(t_stack *stack_a, t_stack *stack_b)
       sa(stack_a);
     else if ((stack_a->stack[a] < stack_a->stack[a+1]) && (stack_a->stack[a] > stack_a->stack[stack_a->max]))
       rra(stack_a);
-    else if (stack_a->max < stack_a->stack[a+1])
-    {
+    else if ((stack_a->stack[a] < stack_a->stack[a+1]) && (stack_a->stack[a] < stack_a->stack[stack_a->max]) && (ft_check_order(stack_a) == 0))
       pb(stack_a, stack_b);
-      sa(stack_a);
+    else if ((ft_check_order(stack_a) == 1 && stack_b->size != 0))
       pa(stack_a, stack_b);
-    }
     return (ft_sort3(stack_a, stack_b));
   }
 }
