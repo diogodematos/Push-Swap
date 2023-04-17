@@ -114,5 +114,6 @@ int		ft_check_error2(t_stack *stack_a, char **argv);
 long    ft_atol(const char *str);
 int	ft_check_order(t_stack *stack_a);
 void ft_sort(t_stack *stack_a, t_stack *stack_b);
+void ft_index(t_stack *stack_a);
 
 #endif

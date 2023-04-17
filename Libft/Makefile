@@ -14,7 +14,7 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	server.c client.c \
 	pushswap.c push.c revrotate.c rotate.c swap.c ft_free.c ft_pssplit.c \
 	ft_fillstack.c ft_check_error.c ft_check_error2.c ft_atol.c \
-	ft_check_order.c ft_sort.c
+	ft_check_order.c ft_sort.c ft_index.c
 	
 
 CC = cc -g

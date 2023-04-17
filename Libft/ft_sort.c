@@ -68,6 +68,7 @@ void ft_sort(t_stack *stack_a, t_stack *stack_b)
     ft_sort2(stack_a);
   if (stack_a->size == 3)
     ft_sort3(stack_a, stack_b);
+  ft_index(stack_a);
   if (stack_a->size == 5)
     ft_sort5(stack_a, stack_b);
 }
