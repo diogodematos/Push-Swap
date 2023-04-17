@@ -12,6 +12,13 @@
 
 #include "libft.h"
 
+void  ft_sort2(t_stack *stack_a)
+{
+  int a;
+
+  a = 0;
+  sa(stack_a);
+}
 
 void ft_sort3(t_stack *stack_a, t_stack *stack_b)
 {
@@ -57,6 +64,8 @@ void  ft_sort5(t_stack *stack_a, t_stack *stack_b)
 
 void ft_sort(t_stack *stack_a, t_stack *stack_b)
 {
+  if (stack_a->size == 2)
+    ft_sort2(stack_a);
   if (stack_a->size == 3)
     ft_sort3(stack_a, stack_b);
   if (stack_a->size == 5)
