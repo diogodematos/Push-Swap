@@ -49,10 +49,10 @@ void	ft_index(t_stack *stack_a)
 	stack_c.size = stack_a->size;
 	ft_sortcopy(&stack_c);
 	j = 0;
-	while (j < stack_c.size)
+	while (j < stack_c.size - 1)
 	{
 		i = 0;
-		while (i < stack_a->size)
+		while (i < stack_a->size - 1)
 		{
 			if (stack_a->stack[i] == stack_c.stack[j])
 			{
@@ -62,4 +62,5 @@ void	ft_index(t_stack *stack_a)
 			i++;
 		}
 	}
+	free(stack_c.stack);
 }
