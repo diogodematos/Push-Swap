@@ -16,13 +16,13 @@ void	sa(t_stack *stack)
 {
 	int	t;
 	int	a;
-	
+
 	if (stack->size < 2)
 		return ;
 	a = 0;
 	t = stack->stack[a];
-	stack->stack[a] = stack->stack[a+1];
-	stack->stack[a+1] = t;
+	stack->stack[a] = stack->stack[a + 1];
+	stack->stack[a + 1] = t;
 	ft_printf("sa\n");
 }
 
@@ -30,13 +30,13 @@ void	sb(t_stack *stack)
 {
 	int	t;
 	int	a;
-	
+
 	if (stack->size < 2)
 		return ;
 	a = 0;
 	t = stack->stack[a];
-	stack->stack[a] = stack->stack[a+1];
-	stack->stack[a+1] = t;
+	stack->stack[a] = stack->stack[a + 1];
+	stack->stack[a + 1] = t;
 	ft_printf("sb\n");
 }
 

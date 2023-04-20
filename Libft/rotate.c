@@ -16,12 +16,12 @@ void	ra(t_stack *stack)
 {
 	int	a;
 	int	tmp;
-	
+
 	a = 0;
-	tmp = stack->stack[a]; 
-	while (a < stack->size-1)
+	tmp = stack->stack[a];
+	while (a < stack->size - 1)
 	{
-		stack->stack[a] = stack->stack[a+1];
+		stack->stack[a] = stack->stack[a + 1];
 		a++;
 	}
 	stack->stack[a] = tmp;
@@ -32,12 +32,12 @@ void	rb(t_stack *stack)
 {
 	int	a;
 	int	tmp;
-	
+
 	a = 0;
-	tmp = stack->stack[a]; 
-	while (a < stack->size-1)
+	tmp = stack->stack[a];
+	while (a < stack->size - 1)
 	{
-		stack->stack[a] = stack->stack[a+1];
+		stack->stack[a] = stack->stack[a + 1];
 		a++;
 	}
 	stack->stack[a] = tmp;

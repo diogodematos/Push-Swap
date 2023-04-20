@@ -12,37 +12,37 @@
 
 #include "libft.h"
 
-int ft_check_double(t_stack *stack_a)
+int	ft_check_double(t_stack *stack_a)
 {
-    int a;
-    int b;
-    int check;
+	int	a;
+	int	b;
+	int	check;
 
-    a = 0;
-    check = 0;
-    while (a < stack_a->size)
-    {
-      b = a + 1;
-    	while (b < stack_a->size)
-      {
-        if (stack_a->stack[a] == stack_a->stack[b])
-        {
-					ft_printf("Error\n");
-					check += 1;
-					return (check);
-				}
-				b++;
-      }
-      a++;
-    }
-    return (check);
+	a = 0;
+	check = 0;
+	while (a < stack_a->size)
+	{
+		b = a + 1;
+		while (b < stack_a->size)
+		{
+			if (stack_a->stack[a] == stack_a->stack[b])
+			{
+				ft_printf("Error\n");
+				check += 1;
+				return (check);
+			}
+			b++;
+		}
+		a++;
+	}
+	return (check);
 }
 
 int	ft_check_intmax2(char **argv)
 {
-	int	a;
-	int check;
-  char	**num;    
+	int		a;
+	int		check;
+	char	**num;
 
 	num = ft_split(argv[1], ' ');
 	a = 0;
@@ -64,9 +64,9 @@ int	ft_check_intmax2(char **argv)
 	return (check);
 }
 
-int ft_check_error2(t_stack *stack_a, char **argv)
+int	ft_check_error2(t_stack *stack_a, char **argv)
 {
-	static int check;
+	static int	check;
 
 	if (ft_check_double(stack_a) == 1)
 	{

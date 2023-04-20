@@ -12,7 +12,7 @@
 
 #include "../Libft/libft.h"
 
-void    print_stacks(t_stack stack_a, t_stack stack_b)
+/*void    print_stacks(t_stack stack_a, t_stack stack_b)
 {
     int j;
     j = 0;
@@ -50,49 +50,37 @@ void    print_stacks(t_stack stack_a, t_stack stack_b)
     }
     printf("%s", "\n");
 }
-
+*/
 int	main(int argc, char **argv)
 {
 	t_stack	stack_a;
 	t_stack	stack_b;
 
-    if (argc < 2)
+	if (argc < 2)
 		return (0);
-    if (ft_check_error(argc, argv) == 1)
-        return (0);
-    if (argc == 2)
-    {
-        ft_pssplit(&stack_a, &stack_b, argv);
-        if (ft_check_error2(&stack_a, argv) == 1)
-        {
-            ft_free(&stack_a, &stack_b);
-            return (0);
-        }
-    }
-    else
-        ft_fillstack(&stack_a, &stack_b, argc, argv);
-    if (stack_a.size == 1)
-    {
-		ft_free(&stack_a, &stack_b);
-        return (0);
-    }
-    if (ft_check_order(&stack_a) == 1)
+	if (ft_check_error(argc, argv) == 1)
+		return (0);
+	if (argc == 2)
+	{
+		ft_pssplit(&stack_a, &stack_b, argv);
+		if (ft_check_error2(&stack_a, argv) == 1)
+		{
+			ft_free(&stack_a, &stack_b);
+			return (0);
+		}
+	}
+	else
+		ft_fillstack(&stack_a, &stack_b, argc, argv);
+	if (ft_check_order(&stack_a) == 1)
 	{
 		ft_free(&stack_a, &stack_b);
-        return (0);
-    }
-    //print_stacks(stack_a, stack_b);
-    ft_sort(&stack_a, &stack_b);
-	//printf("jsh\n");
-	//print_stacks(stack_a, stack_b);
-    /*if (stack_a.size == 2)
-        ft_sort3(&stack_a, &stack_b);*/
-	ft_free(&stack_a, &stack_b);
-    return (0);
+		return (0);
+	}
+	ft_sort(&stack_a, &stack_b);
+	return (0);
 }
-
-
-/*print_stacks(stack_a, stack_b);
+/*
+print_stacks(stack_a, stack_b);
 pb(&stack_a, &stack_b);
 pb(&stack_a, &stack_b);
 pa(&stack_a, &stack_b);

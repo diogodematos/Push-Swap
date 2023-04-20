@@ -16,7 +16,7 @@ void	rra(t_stack *stack)
 {
 	int	a;
 	int	tmp;
-	
+
 	a = stack->size - 1;
 	tmp = stack->stack[a];
 	while (a > 0)
@@ -32,7 +32,7 @@ void	rrb(t_stack *stack)
 {
 	int	a;
 	int	tmp;
-	
+
 	a = stack->size - 1;
 	tmp = stack->stack[a];
 	while (a > 0)

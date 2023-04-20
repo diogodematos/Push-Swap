@@ -12,8 +12,8 @@
 
 #include "libft.h"
 
-void    ft_free(t_stack *stack_a, t_stack *stack_b)
+void	ft_free(t_stack *stack_a, t_stack *stack_b)
 {
-    free(stack_a->stack);
-    free(stack_b->stack);
+	free(stack_a->stack);
+	free(stack_b->stack);
 }

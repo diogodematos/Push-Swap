@@ -12,20 +12,25 @@
 
 #include "libft.h"
 
-int ft_check_order(t_stack *stack_a)
+int	ft_check_order(t_stack *stack_a)
 {
-  int check;
-  int a;
+	int	check;
+	int	a;
 
-  a = stack_a->size -1;
-  check = 0;
-  while (a > 0)
-  {
-    if (stack_a->stack[a] > stack_a->stack[a-1])
-      a--;
-    else 
-      return (check);
-  }
-  check += 1;
-  return (check);
+	a = stack_a->size - 1;
+	check = 0;
+	if (stack_a->size == 1)
+	{
+		check += 1;
+		return (check);
+	}
+	while (a > 0)
+	{
+		if (stack_a->stack[a] > stack_a->stack[a - 1])
+			a--;
+		else
+			return (check);
+	}
+	check += 1;
+	return (check);
 }

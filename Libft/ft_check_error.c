@@ -15,14 +15,16 @@
 int	ft_check_digit(char **argv)
 {
 	int	a;
-	int check;
+	int	check;
 
 	check = 0;
 	a = 0;
 	while (argv[1][a])
 	{
-	if (((argv[1][a] < 48 || argv[1][a] > 57) && (argv[1][a] != 32) && (argv[1][a] != 45)) || ((argv[1][a] == 45) 
-		&& (argv[1][a+1] < 48 || argv[1][a+1] > 57) && ((argv[1][a+1] == 45) || (argv[1][a+1] == 32))))
+		if (((argv[1][a] < 48 || argv[1][a] > 57)
+			&& (argv[1][a] != 32) && (argv[1][a] != 45)) || ((argv[1][a] == 45)
+			&& (argv[1][a + 1] < 48 || argv[1][a + 1] > 57)
+			&& ((argv[1][a + 1] == 45) || (argv[1][a + 1] == 32))))
 		{
 			ft_printf("Error\n");
 			check += 1;
@@ -37,7 +39,7 @@ int	ft_check_digit2(char **argv)
 {
 	int	a;
 	int	b;
-	int check;
+	int	check;
 
 	check = 0;
 	a = 1;
@@ -46,8 +48,9 @@ int	ft_check_digit2(char **argv)
 		b = 0;
 		while (argv[a][b])
 		{
-			if (((argv[a][b] < 48 || argv[a][b] > 57) && (argv[a][b] != 45)) 
-				|| ((argv[a][b] == 45) && ((argv[a][b+1] < 48 || argv[a][b+1] > 57) || argv[a][b+1] == 45)))
+			if (((argv[a][b] < 48 || argv[a][b] > 57) && (argv[a][b] != 45))
+				|| ((argv[a][b] == 45) && ((argv[a][b + 1] < 48
+				|| argv[a][b + 1] > 57) || argv[a][b + 1] == 45)))
 			{
 				ft_printf("Error\n");
 				check += 1;
@@ -63,7 +66,7 @@ int	ft_check_digit2(char **argv)
 int	ft_check_double2(int argc, char **argv)
 {
 	int	a;
-	int check;
+	int	check;
 	int	b;
 
 	check = 0;
@@ -89,7 +92,7 @@ int	ft_check_double2(int argc, char **argv)
 int	ft_check_intmax(char **argv)
 {
 	int	a;
-	int check;
+	int	check;
 
 	a = 1;
 	check = 0;
@@ -108,7 +111,7 @@ int	ft_check_intmax(char **argv)
 
 int	ft_check_error(int argc, char **argv)
 {
-	static int check;
+	static int	check;
 
 	if (argc < 1)
 		return (check);
@@ -122,17 +125,9 @@ int	ft_check_error(int argc, char **argv)
 	}
 	else
 	{
-		if (ft_check_digit2(argv) == 1)
-		{
-			check += 1;
-			return (check);
-		}
-		else if (ft_check_double2(argc, argv) == 1)
-		{
-			check += 1;
-			return (check);
-		}
-		else if (ft_check_intmax(argv) == 1)
+		if ((ft_check_digit2(argv) == 1)
+			|| (ft_check_double2(argc, argv) == 1)
+			|| (ft_check_intmax(argv) == 1))
 		{
 			check += 1;
 			return (check);

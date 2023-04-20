@@ -23,21 +23,20 @@ void	ft_sortcopy(t_stack *stack_c)
 		if (stack_c->stack[i] > stack_c->stack[i + 1])
 		{
 			tmp = stack_c->stack[i];
-			stack_c->stack[i] = stack_c->stack[i+1];
-			stack_c->stack[i+1] = tmp;
+			stack_c->stack[i] = stack_c->stack[i + 1];
+			stack_c->stack[i + 1] = tmp;
 			i = 0;
 		}
 		else
 			i++;
 	}
-	//stack_a->nummax = stack_c->stack[i]
 }
 
 void	ft_index(t_stack *stack_a)
 {
 	static int	i;
-	static int j;
-	t_stack	stack_c;
+	static int	j;
+	t_stack		stack_c;
 
 	stack_c.stack = calloc((stack_a->size), sizeof(int));
 	stack_c.size = stack_a->size;
@@ -46,9 +45,8 @@ void	ft_index(t_stack *stack_a)
 		stack_c.stack[i] = stack_a->stack[i];
 		i++;
 	}
-	stack_c.size = stack_a->size;
 	ft_sortcopy(&stack_c);
-	while (j < stack_c.size)
+	while (j < stack_a->size)
 	{
 		i = -1;
 		while (++i < stack_a->size)
@@ -56,7 +54,7 @@ void	ft_index(t_stack *stack_a)
 			if (stack_a->stack[i] == stack_c.stack[j])
 			{
 				stack_a->stack[i] = j++;
-				break;
+				break ;
 			}
 		}
 	}

@@ -40,9 +40,7 @@ typedef struct s_stack
 {
 	int				size;
 	int				*stack;
-	int				max;//tail of stack
-	int				min;
-	int				nummax;//max number in stack
+	int				max;
 }					t_stack;
 
 int		ft_isalpha(int a);
@@ -107,14 +105,14 @@ void	rr(t_stack *stacka, t_stack *stackb);
 void	rra(t_stack *stack);
 void	rrb(t_stack *stack);
 void	rrr(t_stack *stacka, t_stack *stackb);
-void    ft_free(t_stack *stack_a, t_stack *stack_b);
-void    ft_pssplit(t_stack *stack_a, t_stack *stack_b, char **argv);
+void	ft_free(t_stack *stack_a, t_stack *stack_b);
+void	ft_pssplit(t_stack *stack_a, t_stack *stack_b, char **argv);
 void	ft_fillstack(t_stack *stack_a, t_stack *stack_b, int argc, char **argv);
 int		ft_check_error(int argc, char **argv);
 int		ft_check_error2(t_stack *stack_a, char **argv);
-long    ft_atol(const char *str);
-int	ft_check_order(t_stack *stack_a);
-void ft_sort(t_stack *stack_a, t_stack *stack_b);
-void ft_index(t_stack *stack_a);
+long	ft_atol(const char *str);
+int		ft_check_order(t_stack *stack_a);
+void	ft_sort(t_stack *stack_a, t_stack *stack_b);
+void	ft_index(t_stack *stack_a);
 
 #endif

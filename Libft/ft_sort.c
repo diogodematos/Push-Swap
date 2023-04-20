@@ -12,92 +12,107 @@
 
 #include "libft.h"
 
-void  ft_sort2(t_stack *stack_a)
+void	ft_sort2(t_stack *stack_a)
 {
-  int a;
+	int	a;
 
-  a = 0;
-  sa(stack_a);
+	a = 0;
+	sa(stack_a);
 }
 
-void ft_sort3(t_stack *stack_a, t_stack *stack_b)
+void	ft_sort3(t_stack *stack_a, t_stack *stack_b)
 {
-  int a;
+	int	a;
 
-  a = 0;
-  if ((ft_check_order(stack_a) == 0) || (ft_check_order(stack_a) == 1 && stack_b->size != 0))
-  {
-    if ((stack_a->stack[a] > stack_a->stack[a+1]) && (stack_a->stack[a] > stack_a->stack[stack_a->max]))
-      ra(stack_a);
-    else if ((stack_a->stack[a] > stack_a->stack[a+1]) && (stack_a->stack[a] < stack_a->stack[stack_a->max]))
-      sa(stack_a);
-    else if ((stack_a->stack[a] < stack_a->stack[a+1]) && (stack_a->stack[a] > stack_a->stack[stack_a->max]))
-      rra(stack_a);
-    else if ((stack_a->stack[a] < stack_a->stack[a+1]) && (stack_a->stack[a] < stack_a->stack[stack_a->max]) && (ft_check_order(stack_a) == 0))
-      pb(stack_a, stack_b);
-    else if ((ft_check_order(stack_a) == 1 && stack_b->size != 0))
-      pa(stack_a, stack_b);
-    return (ft_sort3(stack_a, stack_b));
-  }
+	a = 0;
+	if ((ft_check_order(stack_a) == 0)
+		|| (ft_check_order(stack_a) == 1 && stack_b->size != 0))
+	{
+		if ((stack_a->stack[a] > stack_a->stack[a + 1])
+			&& (stack_a->stack[a] > stack_a->stack[stack_a->max]))
+			ra(stack_a);
+		else if ((stack_a->stack[a] > stack_a->stack[a + 1])
+			&& (stack_a->stack[a] < stack_a->stack[stack_a->max]))
+			sa(stack_a);
+		else if ((stack_a->stack[a] < stack_a->stack[a + 1])
+			&& (stack_a->stack[a] > stack_a->stack[stack_a->max]))
+			rra(stack_a);
+		else if ((stack_a->stack[a] < stack_a->stack[a + 1])
+			&& (stack_a->stack[a] < stack_a->stack[stack_a->max])
+			&& (ft_check_order(stack_a) == 0))
+			pb(stack_a, stack_b);
+		else if ((ft_check_order(stack_a) == 1 && stack_b->size != 0))
+			pa(stack_a, stack_b);
+		return (ft_sort3(stack_a, stack_b));
+	}
 }
 
-void  ft_sort5(t_stack *stack_a, t_stack *stack_b)
+void	ft_sort5(t_stack *stack_a, t_stack *stack_b)
 {
-  int a;
+	int	a;
 
-  a = 0;
-  if ((ft_check_order(stack_a) == 0) || (ft_check_order(stack_a) == 1 && stack_b->size != 0))
-  {
-    if ((stack_a->stack[a] > stack_a->stack[a+1]) && (stack_a->stack[a] > stack_a->stack[stack_a->max]))
-      ra(stack_a);
-    else if ((stack_a->stack[a] > stack_a->stack[a+1]) && (stack_a->stack[a] < stack_a->stack[stack_a->max]))
-      sa(stack_a);
-    else if ((stack_a->stack[a] < stack_a->stack[a+1]) && (stack_a->stack[a] > stack_a->stack[stack_a->max]))
-      rra(stack_a);
-    else if ((stack_a->stack[a] < stack_a->stack[a+1]) && (stack_a->stack[a] < stack_a->stack[stack_a->max]) && (ft_check_order(stack_a) == 0))
-      pb(stack_a, stack_b);
-    else if (ft_check_order(stack_a) == 1 && stack_b->size != 0)
-      pa(stack_a, stack_b);
-    return (ft_sort5(stack_a, stack_b));
-  }
+	a = 0;
+	if ((ft_check_order(stack_a) == 0)
+		|| (ft_check_order(stack_a) == 1 && stack_b->size != 0))
+	{
+		if ((stack_a->stack[a] > stack_a->stack[a + 1])
+			&& (stack_a->stack[a] > stack_a->stack[stack_a->max]))
+			ra(stack_a);
+		else if ((stack_a->stack[a] > stack_a->stack[a + 1])
+			&& (stack_a->stack[a] < stack_a->stack[stack_a->max]))
+			sa(stack_a);
+		else if ((stack_a->stack[a] < stack_a->stack[a + 1])
+			&& (stack_a->stack[a] > stack_a->stack[stack_a->max]))
+			rra(stack_a);
+		else if ((stack_a->stack[a] < stack_a->stack[a + 1])
+			&& (stack_a->stack[a] < stack_a->stack[stack_a->max])
+			&& (ft_check_order(stack_a) == 0))
+			pb(stack_a, stack_b);
+		else if (ft_check_order(stack_a) == 1 && stack_b->size != 0)
+			pa(stack_a, stack_b);
+		return (ft_sort5(stack_a, stack_b));
+	}
 }
 
-void ft_sortall(t_stack *stack_a, t_stack *stack_b)
+void	ft_sortall(t_stack *stack_a, t_stack *stack_b)
 {
-  static int a;
-  static int max_bits;
-  int b;
-  int size;
+	static int	a;
+	static int	max_bits;
+	int			b;
+	int			size;
 
-  size = stack_a->size;
-  while ((stack_a->max >> max_bits) != 0)
-    ++max_bits;
-  while (a < max_bits)
-  {
-    b = 0;
-    while (b < size)
-    {
-      if (((stack_a->stack[0] >> a)&1) == 1)
-        ra(stack_a);
-      else
-        pb(stack_a, stack_b);
-      b++;
-    }
-    while (stack_b->size > 0)
-      pa(stack_a, stack_b);
-    a++;
-  }
+	size = stack_a->size;
+	while ((stack_a->max >> max_bits) != 0)
+		++max_bits;
+	while (a < max_bits)
+	{
+		b = 0;
+		while (b < size)
+		{
+			if (((stack_a->stack[0] >> a) & 1) == 1)
+				ra(stack_a);
+			else
+				pb(stack_a, stack_b);
+			b++;
+		}
+		while (stack_b->size > 0)
+			pa(stack_a, stack_b);
+		a++;
+	}
 }
 
-void ft_sort(t_stack *stack_a, t_stack *stack_b)
+void	ft_sort(t_stack *stack_a, t_stack *stack_b)
 {
-  if (stack_a->size == 2)
-    ft_sort2(stack_a);
-  if (stack_a->size == 3)
-    ft_sort3(stack_a, stack_b);
-  ft_index(stack_a);
-  if (stack_a->size == 5)
-    ft_sort5(stack_a, stack_b);
-  else
-    ft_sortall(stack_a, stack_b);
+	if (stack_a->size == 2)
+		ft_sort2(stack_a);
+	else if (stack_a->size == 3)
+		ft_sort3(stack_a, stack_b);
+	else if (stack_a->size == 5)
+		ft_sort5(stack_a, stack_b);
+	else
+	{
+		ft_index(stack_a);
+		ft_sortall(stack_a, stack_b);
+	}
+	ft_free(stack_a, stack_b);
 }
