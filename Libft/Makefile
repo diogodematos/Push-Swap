@@ -29,13 +29,13 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 		@$(AR) $(NAME) $(OBJ)
-		@$(CC) $(CFLAGS) pushswap.c libft.a -o pushswap
+		@$(CC) $(CFLAGS) pushswap.c libft.a -o push_swap
 		
 clean:
 		@$(RM) $(OBJ)
 		
 fclean: clean
-		@$(RM) $(NAME) pushswap
+		@$(RM) $(NAME) push_swap
 		
 re: fclean all
 

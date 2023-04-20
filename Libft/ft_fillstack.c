@@ -23,7 +23,7 @@ void	ft_fillstack(t_stack *stack_a, t_stack *stack_b, int argc, char **argv)
 		stack_b->stack = calloc((argc-1), sizeof(int));
 		stack_a->size = argc - 1;
 		stack_a->max = argc - 2;
-		stack_a->min = stack_a->stack[0];
+		stack_a->nummax = 0;
 		stack_b->size = 0;
 		while (a < stack_a->size)
 		{

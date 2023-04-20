@@ -40,8 +40,9 @@ typedef struct s_stack
 {
 	int				size;
 	int				*stack;
-	int				max;
+	int				max;//tail of stack
 	int				min;
+	int				nummax;//max number in stack
 }					t_stack;
 
 int		ft_isalpha(int a);

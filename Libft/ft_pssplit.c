@@ -46,5 +46,6 @@ void    ft_pssplit(t_stack *stack_a, t_stack *stack_b, char **argv)
     }
     stack_a->size = a;
 		stack_a->max = a - 1;
+		stack_a->nummax = 0;
     free(num);
 }

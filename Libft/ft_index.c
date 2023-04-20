@@ -30,6 +30,7 @@ void	ft_sortcopy(t_stack *stack_c)
 		else
 			i++;
 	}
+	//stack_a->nummax = stack_c->stack[i]
 }
 
 void	ft_index(t_stack *stack_a)
