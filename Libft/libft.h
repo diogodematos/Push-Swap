@@ -114,5 +114,7 @@ long	ft_atol(const char *str);
 int		ft_check_order(t_stack *stack_a);
 void	ft_sort(t_stack *stack_a, t_stack *stack_b);
 void	ft_index(t_stack *stack_a);
+int		ft_check_order2(t_stack *stack_b);
+void	ft_sortall(t_stack *stack_a, t_stack *stack_b);
 
 #endif

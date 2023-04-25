@@ -26,7 +26,7 @@ int	ft_check_digit(char **argv)
 			&& (argv[1][a + 1] < 48 || argv[1][a + 1] > 57)
 			&& ((argv[1][a + 1] == 45) || (argv[1][a + 1] == 32))))
 		{
-			ft_printf("Error\n");
+			write(2, "Error\n", 6);
 			check += 1;
 			return (check);
 		}
@@ -52,7 +52,7 @@ int	ft_check_digit2(char **argv)
 				|| ((argv[a][b] == 45) && ((argv[a][b + 1] < 48
 				|| argv[a][b + 1] > 57) || argv[a][b + 1] == 45)))
 			{
-				ft_printf("Error\n");
+				write(2, "Error\n", 6);
 				check += 1;
 				return (check);
 			}
@@ -78,7 +78,7 @@ int	ft_check_double2(int argc, char **argv)
 		{
 			if (ft_atoi(argv[a]) == ft_atoi(argv[b]))
 			{
-				ft_printf("Error\n");
+				write(2, "Error\n", 6);
 				check += 1;
 				return (check);
 			}
@@ -100,7 +100,7 @@ int	ft_check_intmax(char **argv)
 	{
 		if (ft_atol(argv[a]) > 2147483647)
 		{
-			ft_printf("Error\n");
+			write(2, "Error\n", 6);
 			check += 1;
 			return (check);
 		}

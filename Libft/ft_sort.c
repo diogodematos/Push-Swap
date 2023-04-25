@@ -74,33 +74,6 @@ void	ft_sort5(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-void	ft_sortall(t_stack *stack_a, t_stack *stack_b)
-{
-	static int	a;
-	static int	max_bits;
-	int			b;
-	int			size;
-
-	size = stack_a->size;
-	while ((stack_a->max >> max_bits) != 0)
-		++max_bits;
-	while (a < max_bits)
-	{
-		b = 0;
-		while (b < size)
-		{
-			if (((stack_a->stack[0] >> a) & 1) == 1)
-				ra(stack_a);
-			else
-				pb(stack_a, stack_b);
-			b++;
-		}
-		while (stack_b->size > 0)
-			pa(stack_a, stack_b);
-		a++;
-	}
-}
-
 void	ft_sort(t_stack *stack_a, t_stack *stack_b)
 {
 	if (stack_a->size == 2)

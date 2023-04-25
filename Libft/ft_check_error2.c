@@ -27,7 +27,7 @@ int	ft_check_double(t_stack *stack_a)
 		{
 			if (stack_a->stack[a] == stack_a->stack[b])
 			{
-				ft_printf("Error\n");
+				write(2, "Error\n", 6);
 				check += 1;
 				return (check);
 			}
@@ -51,7 +51,7 @@ int	ft_check_intmax2(char **argv)
 	{
 		if (ft_atol(num[a]) > 2147483647)
 		{
-			ft_printf("Error\n");
+			write(2, "Error\n", 6);
 			check += 1;
 			free(num[a]);
 			free(num);

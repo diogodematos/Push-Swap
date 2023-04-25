@@ -34,3 +34,26 @@ int	ft_check_order(t_stack *stack_a)
 	check += 1;
 	return (check);
 }
+
+int	ft_check_order2(t_stack *stack_b)
+{
+	int	check;
+	int	a;
+
+	a = stack_b->size - 1;
+	check = 0;
+	if (stack_b->size == 1)
+	{
+		check += 1;
+		return (check);
+	}
+	while (a > 0)
+	{
+		if (stack_b->stack[a] < stack_b->stack[a - 1])
+			a--;
+		else
+			return (check);
+	}
+	check += 1;
+	return (check);
+}
