@@ -40,20 +40,22 @@ int	ft_check_double(t_stack *stack_a)
 
 int	ft_check_intmax2(char **argv)
 {
-	int		a;
-	int		check;
-	char	**num;
+	static int		a;
+	static int		check;
+	char			**num;
 
 	num = ft_split(argv[1], ' ');
-	a = 0;
-	check = 0;
 	while (num[a])
 	{
 		if (ft_atol(num[a]) > 2147483647)
 		{
 			write(2, "Error\n", 6);
 			check += 1;
-			free(num[a]);
+			while (num[a])
+			{
+				free(num[a]);
+				a++;
+			}
 			free(num);
 			return (check);
 		}

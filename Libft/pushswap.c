@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Libft/libft.h"
+#include "libft.h"
 
 /*void    print_stacks(t_stack stack_a, t_stack stack_b)
 {

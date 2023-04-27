@@ -35,8 +35,8 @@ void	ft_pssplit(t_stack *stack_a, t_stack *stack_b, char **argv)
 
 	num = ft_split(argv[1], ' ');
 	a = 0;
-	stack_a->stack = calloc(count_size(argv[1], ' '), sizeof(int));
-	stack_b->stack = calloc(count_size(argv[1], ' '), sizeof(int));
+	stack_a->stack = ft_calloc(count_size(argv[1], ' '), sizeof(int));
+	stack_b->stack = ft_calloc(count_size(argv[1], ' '), sizeof(int));
 	stack_b->size = 0;
 	while (num[a])
 	{
