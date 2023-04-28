@@ -34,17 +34,15 @@ void	ft_sortcopy(t_stack *stack_c)
 
 void	ft_index(t_stack *stack_a)
 {
-	static int	i;
-	static int	j;
+	int			i;
+	int			j;
 	t_stack		stack_c;
 
 	stack_c.stack = ft_calloc((stack_a->size), sizeof(int));
 	stack_c.size = stack_a->size;
-	while (i < stack_c.size)
-	{
+	i = -1;
+	while (++i < stack_c.size)
 		stack_c.stack[i] = stack_a->stack[i];
-		i++;
-	}
 	ft_sortcopy(&stack_c);
 	i = -1;
 	while (++i < stack_a->size)
@@ -61,14 +59,3 @@ void	ft_index(t_stack *stack_a)
 	}
 	free(stack_c.stack);
 }
-
-
-
-
-
-
-
-
-
-
-
